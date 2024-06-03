@@ -15,6 +15,11 @@ class BitesyMidtransController extends Controller
 {
     protected $midtransService;
 
+    public function __construct(MidtransService $midtransService)
+    {
+        $this->midtransService = $midtransService;
+    }
+
     public function checkout(Request $request)
     {
         $validator = Validator::make($request->all(), [
